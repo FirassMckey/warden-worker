@@ -158,7 +158,7 @@ simple = { limit = 10, period = 60 }
 
 [[env.dev.d1_databases]]
 binding = "vault1"
-database_name = "vault1-dev"
+database_name = "warden-db"
 database_id = "b9c0ff7f-0f23-46fb-9ca5-8b1affd0a761"
 migrations_dir = "migrations"
 
