@@ -42,7 +42,7 @@ simple = { limit = 5, period = 60 }
 name = "SEND_ACCESS_RATE_LIMITER"
 namespace_id = "1003"
 # Allow 15 password attempts per minute per IP for public Send access.
-simple = { limit = 15, period = 60 }
+simple = { limit = 5, period = 60 }
 
 # Static assets configuration for serving frontend
 # Frontend files (bw_web_builds) are expected under ./public/web-vault before deployment
@@ -110,8 +110,8 @@ crons = ["0 3 * * *"]
 
 [[d1_databases]]
 binding = "vault1"
-database_name = "vault1"
-database_id = "${D1_DATABASE_ID}"
+database_name = "warden-db"
+database_id = "b9c0ff7f-0f23-46fb-9ca5-8b1affd0a761"
 migrations_dir = "migrations"
 
 # R2 bucket for file attachments (optional, requires credit card)
