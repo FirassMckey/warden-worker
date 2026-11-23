@@ -159,7 +159,7 @@ simple = { limit = 10, period = 60 }
 [[env.dev.d1_databases]]
 binding = "vault1"
 database_name = "vault1-dev"
-database_id = "${D1_DATABASE_ID_DEV}"
+database_id = "b9c0ff7f-0f23-46fb-9ca5-8b1affd0a761"
 migrations_dir = "migrations"
 
 # R2 bucket for file attachments in dev environment (optional, requires credit card)
