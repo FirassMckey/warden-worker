@@ -1,0 +1,20 @@
+name: Upstream Sync
+on:
+  schedule:
+    - cron: "0 4 * * *" # Checks for upstream updates daily at 04:00 UTC
+  workflow_dispatch: # Lets you click "Run workflow" anytime to test
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync fork with upstream
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
+        with:
+          upstream_sync_repo: qaz741wsd856/warden-worker
+          upstream_sync_branch: main
+          target_sync_branch: main
+          target_repo_token: ${{ secrets.GITHUB_TOKEN }}
