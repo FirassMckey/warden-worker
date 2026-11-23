@@ -1,8 +1,8 @@
 name: Upstream Sync
 on:
   schedule:
-    - cron: "0 4 * * *" # Checks for upstream updates daily at 04:00 UTC
-  workflow_dispatch: # Lets you click "Run workflow" anytime to test
+    - cron: "0 4 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
