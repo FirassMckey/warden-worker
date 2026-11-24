@@ -1,4 +1,4 @@
-name: Deploy Warden Worker
+name: Deploy Dev
 permissions:
   contents: read
 
