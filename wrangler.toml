@@ -128,39 +128,39 @@ migrations_dir = "migrations"
 [[kv_namespaces]]
 binding = "ATTACHMENTS_KV"
 
-[env.dev]
-name = "warden-worker-dev"
-workers_dev = false
-preview_urls = false
+#[env.dev]
+#name = "warden-worker-dev"
+#workers_dev = false
+#preview_urls = false
 
-[env.dev.vars]
+#[env.dev.vars]
 
-[env.dev.durable_objects]
-bindings = [
-  { name = "HEAVY_DO", class_name = "HeavyDo" },
-  { name = "NOTIFY_DO", class_name = "NotifyDo" }
-]
+#[env.dev.durable_objects]
+#bindings = [
+#  { name = "HEAVY_DO", class_name = "HeavyDo" },
+#  { name = "NOTIFY_DO", class_name = "NotifyDo" }
+#]
 
 # Dev environment also needs cron triggers
-[env.dev.triggers]
-crons = ["0 3 * * *"]
+#[env.dev.triggers]
+#crons = ["0 3 * * *"]
 
 # Rate limiting for dev environment (same settings as production)
-[[env.dev.ratelimits]]
-name = "LOGIN_RATE_LIMITER"
-namespace_id = "1002"
-simple = { limit = 5, period = 60 }
+#[[env.dev.ratelimits]]
+#name = "LOGIN_RATE_LIMITER"
+#namespace_id = "1002"
+#simple = { limit = 5, period = 60 }
 
-[[env.dev.ratelimits]]
-name = "SEND_ACCESS_RATE_LIMITER"
-namespace_id = "1004"
-simple = { limit = 10, period = 60 }
+#[[env.dev.ratelimits]]
+#name = "SEND_ACCESS_RATE_LIMITER"
+#namespace_id = "1004"
+#simple = { limit = 10, period = 60 }
 
-[[env.dev.d1_databases]]
-binding = "vault1"
-database_name = "warden-db"
-database_id = "cc187454-6e1b-48d4-8cc8-8a32df308098"
-migrations_dir = "migrations"
+#[[env.dev.d1_databases]]
+#binding = "vault1"
+#database_name = "warden-db"
+#database_id = "cc187454-6e1b-48d4-8cc8-8a32df308098"
+#migrations_dir = "migrations"
 
 # R2 bucket for file attachments in dev environment (optional, requires credit card)
 # [[env.dev.r2_buckets]]
@@ -168,18 +168,18 @@ migrations_dir = "migrations"
 # bucket_name = "warden-attachments-dev"
 
 # KV namespace for file attachments in dev environment (optional, no credit card required)
-[[env.dev.kv_namespaces]]
-binding = "ATTACHMENTS_KV"
+#[[env.dev.kv_namespaces]]
+#binding = "ATTACHMENTS_KV"
 
 # logs
-[env.dev.observability]
-[env.dev.observability.logs]
-enabled = true
-head_sampling_rate = 1
-invocation_logs = true
-persist = true
+#[env.dev.observability]
+#[env.dev.observability.logs]
+#enabled = true
+#head_sampling_rate = 1
+#invocation_logs = true
+#persist = true
 
-[env.dev.observability.traces]
-enabled = false
-persist = true
-head_sampling_rate = 1
+#[env.dev.observability.traces]
+#enabled = false
+#persist = true
+#head_sampling_rate = 1
