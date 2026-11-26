@@ -14,11 +14,17 @@ enabled = false
 enabled = false
 invocation_logs = false
 
-# Set your vault origin here (e.g., "https://vault.example.com")
+# Set generic placeholders here for documentation only.
+# Store the real values in GitHub Actions Secrets (Settings -> Secrets and variables -> Actions):
+#   - CLOUDFLARE_API_TOKEN
+#   - CLOUDFLARE_ACCOUNT_ID
+#   - ALLOWED_ORIGIN (e.g., "https://vault.<domain>.com")
 [vars]
+CLOUDFLARE_API_TOKEN = "<set-in-github-actions-secrets>"
+CLOUDFLARE_ACCOUNT_ID = "<set-in-github-actions-secrets>"
 ALLOWED_ORIGIN = "https://vault.<domain>.com"
 
 # KV Namespace binding (ID is auto-created and injected during GitHub Actions deploy)
 [[kv_namespaces]]
-binding = "warden.icons"
+binding = "warden-icons"
 id = "REPLACE_WITH_KV_ID"
