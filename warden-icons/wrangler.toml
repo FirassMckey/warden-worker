@@ -1,0 +1,24 @@
+name = "warden-icons"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+# Disable default *.workers.dev subdomain (production) and preview URLs
+workers_dev = false
+preview_urls = false
+
+# Disable all observability, tracing, and invocation logs
+[observability]
+enabled = false
+
+[observability.logs]
+enabled = false
+invocation_logs = false
+
+# Set your vault origin here (e.g., "https://vault.example.com")
+[vars]
+ALLOWED_ORIGIN = "https://vault.<domain>.com"
+
+# KV Namespace binding (ID is auto-created and injected during GitHub Actions deploy)
+[[kv_namespaces]]
+binding = "warden.icons"
+id = "REPLACE_WITH_KV_ID"
