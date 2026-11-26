@@ -3,7 +3,7 @@ name: Deploy Warden Icons Worker
 on:
   push:
     branches:
-      - warden-icons # Change this if your branch has a different name
+      - main/warden-icons # Change this if your branch has a different name
   workflow_dispatch:
 
 jobs:
