@@ -108,7 +108,7 @@ export default {
       });
     }
 
-    const kv = env["warden.icons"];
+    const kv = env["warden-icons"];
     const kvKey = `icon:${hostname}`;
     const candidateDomains = getCandidateDomains(hostname);
 
